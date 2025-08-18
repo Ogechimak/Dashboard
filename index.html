@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Management Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="sidebar">
+            <div class="logo">📊 BizManager</div>
+            <nav>
+                <div class="nav-item active">
+                    <span class="nav-icon">📈</span>
+                    Dashboard
+                </div>
+                <div class="nav-item">
+                    <span class="nav-icon">💰</span>
+                    Budgeting
+                </div>
+                <div class="nav-item">
+                    <span class="nav-icon">📝</span>
+                    Data Entry
+                </div>
+                <div class="nav-item">
+                    <span class="nav-icon">🛒</span>
+                    Sales Tracking
+                </div>
+                <div class="nav-item">
+                    <span class="nav-icon">🧾</span>
+                    Invoicing
+                </div>
+                <div class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    Reporting
+                </div>
+                <div class="nav-item">
+                    <span class="nav-icon">💳</span>
+                    Payment Mandates
+                </div>
+            </nav>
+        </div>
+        
+        <div class="main-content">
+            <div class="header">
+                <h1>Dashboard Overview</h1>
+                <button class="upload-btn">📁 Upload Excel File</button>
+            </div>
+            
+            <div class="content">
+                <div class="alert-banner">
+                    <div class="alert-text">
+                        ⚠️ <strong>Budget Alert:</strong> Marketing category is 15% over budget this month
+                    </div>
+                    <button class="alert-close">×</button>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card budget">
+                        <div class="stat-label">Monthly Budget</div>
+                        <div class="stat-value">$25,430</div>
+                        <div class="stat-change negative">↑ 12% over budget</div>
+                    </div>
+                    
+                    <div class="stat-card sales">
+                        <div class="stat-label">Total Sales</div>
+                        <div class="stat-value">$48,250</div>
+                        <div class="stat-change positive">↑ 8% vs last month</div>
+                    </div>
+                    
+                    <div class="stat-card invoices">
+                        <div class="stat-label">Outstanding Invoices</div>
+                        <div class="stat-value">$12,340</div>
+                        <div class="stat-change negative">5 overdue</div>
+                    </div>
+                    
+                    <div class="stat-card cash">
+                        <div class="stat-label">Cash Flow</div>
+                        <div class="stat-value">$15,890</div>
+                        <div class="stat-change positive">↑ 22% this quarter</div>
+                    </div>
+                </div>
+                
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <div class="chart-title">Sales vs Budget Performance (Monthly)</div>
+                        <div class="chart-placeholder">
+                            📈 Interactive Line Chart<br>
+                            Sales Trends, Budget Comparison, Cash Flow Analysis
+                        </div>
+                    </div>
+                    
+                    <div class="chart-card">
+                        <div class="chart-title">Budget Categories</div>
+                        <div class="chart-placeholder">
+                            🍰 Pie Chart<br>
+                            Marketing, Operations, Salaries<br>
+                            with % deviations
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bottom-grid">
+                    <div class="table-card">
+                        <div class="chart-title">Recent Invoices</div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Invoice #</th>
+                                    <th>Client</th>
+                                    <th>Amount</th>
+                                    <th>Due Date</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>INV-001</td>
+                                    <td>Acme Corp</td>
+                                    <td>$2,500</td>
+                                    <td>Dec 15</td>
+                                    <td><span class="status paid">Paid</span></td>
+                                </tr>
+                                <tr>
+                                    <td>INV-002</td>
+                                    <td>Tech Solutions</td>
+                                    <td>$1,800</td>
+                                    <td>Dec 20</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td>INV-003</td>
+                                    <td>StartupXYZ</td>
+                                    <td>$3,200</td>
+                                    <td>Dec 10</td>
+                                    <td><span class="status overdue">Overdue</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="table-card">
+                        <div class="chart-title">Top Selling Products</div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Units Sold</th>
+                                    <th>Revenue</th>
+                                    <th>Trend</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Pro Package</td>
+                                    <td>45</td>
+                                    <td>$15,750</td>
+                                    <td style="color: #4CAF50;">↑ 12%</td>
+                                </tr>
+                                <tr>
+                                    <td>Basic Service</td>
+                                    <td>38</td>
+                                    <td>$9,120</td>
+                                    <td style="color: #4CAF50;">↑ 5%</td>
+                                </tr>
+                                <tr>
+                                    <td>Consultation</td>
+                                    <td>22</td>
+                                    <td>$6,600</td>
+                                    <td style="color: #f44336;">↓ 8%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

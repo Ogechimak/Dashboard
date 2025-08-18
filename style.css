@@ -181,7 +181,7 @@ body {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 20px;
-    color: #333;
+    color: #ee5a24;
 }
 
 .chart-placeholder {
@@ -217,11 +217,11 @@ body {
 .table th, .table td {
     padding: 12px;
     text-align: left;
-    border-bottom: 1px solid #eee;
+    border-bottom: 2px solid #eee;
 }
 
 .table th {
-    background: #f8f9fa;
+    background: #667eea;
     font-weight: 600;
     color: #333;
 }

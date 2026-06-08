@@ -3,277 +3,302 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Management Dashboard</title>
+    <title>LedgerPro Finance Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="dashboard">
-        <div class="sidebar">
-            <div class="logo">📊 BizManager</div>
-            <nav>
-                <div class="nav-item active">
-                    <span class="nav-icon">📈</span>
-                    Dashboard
-                </div>
-                <div class="nav-item">
-                    <span class="nav-icon">💰</span>
-                    Budgeting
-                </div>
-                <div class="nav-item">
-                    <span class="nav-icon">📝</span>
-                    Data Entry
-                </div>
-            
-                <div class="nav-item">
-                    <span class="nav-icon">🧾</span>
-                    Invoicing
-                </div>
-                <div class="nav-item">
-                    <span class="nav-icon">📊</span>
-                    Reporting
-                </div>
-                <div class="nav-item">
-                    <span class="nav-icon">💳</span>
-                    Payment Mandates
-                </div>
+    <div class="app-shell">
+        <aside class="sidebar" aria-label="Primary navigation">
+            <a class="brand" href="#overview" aria-label="LedgerPro home">
+                <span class="brand-mark">L</span>
+                <span>
+                    <strong>LedgerPro</strong>
+                    <small>Finance OS</small>
+                </span>
+            </a>
+
+            <nav class="sidebar-nav">
+                <a class="nav-item active" href="#overview">
+                    <span class="icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M4 13h6V4H4v9Zm0 7h6v-5H4v5Zm10 0h6v-9h-6v9Zm0-16v5h6V4h-6Z"/></svg>
+                    </span>
+                    Overview
+                </a>
+                <a class="nav-item" href="#budgets">
+                    <span class="icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 17.5v-11Zm4 2v2h8v-2H8Zm0 4v2h5v-2H8Z"/></svg>
+                    </span>
+                    Budgets
+                </a>
+                <a class="nav-item" href="#invoices">
+                    <span class="icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M5 4h14v16l-2.5-1.5L14 20l-2.5-1.5L9 20l-2.5-1.5L4 20V5a1 1 0 0 1 1-1Zm4 5h6V7H9v2Zm0 4h8v-2H9v2Zm0 4h5v-2H9v2Z"/></svg>
+                    </span>
+                    Invoices
+                </a>
+                <a class="nav-item" href="#analytics">
+                    <span class="icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M4 19h16v2H4v-2Zm2-3h3V8H6v8Zm5 0h3V3h-3v13Zm5 0h3v-6h-3v6Z"/></svg>
+                    </span>
+                    Analytics
+                </a>
+                <a class="nav-item" href="#products">
+                    <span class="icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5Zm0 2.3 5.5 3.1L12 10.5 6.5 7.4 12 4.3ZM5 9.1l6 3.4v6.2l-6-3.3V9.1Zm14 6.3-6 3.3v-6.2l6-3.4v6.3Z"/></svg>
+                    </span>
+                    Products
+                </a>
+                <a class="nav-item" href="#alerts">
+                    <span class="icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7v3.2L3 15v1h18v-1l-2-2.8V9a7 7 0 0 0-7-7Zm-2 16a2 2 0 0 0 4 0h-4Z"/></svg>
+                    </span>
+                    Alerts
+                </a>
             </nav>
-        </div>
-        
-        <div class="main-content">
-            <div class="header">
-                <h1>Dashboard Overview</h1>
-                <button class="upload-btn">📁 Upload Excel File</button>
+
+            <div class="sidebar-card">
+                <span class="eyebrow">Runway</span>
+                <strong>18.4 months</strong>
+                <p>Cash position remains healthy at current burn.</p>
             </div>
-            
-            <div class="content">
-                <div class="alert-banner">
-                    <div class="alert-text">
-                        ⚠️ <strong>Budget Alert:</strong> Marketing category is 15% over budget this month
+        </aside>
+
+        <div class="app-main">
+            <header class="topbar">
+                <button class="mobile-menu" type="button" aria-label="Open navigation" aria-expanded="false">
+                    <svg viewBox="0 0 24 24"><path d="M4 6h16v2H4V6Zm0 5h16v2H4v-2Zm0 5h16v2H4v-2Z"/></svg>
+                </button>
+                <label class="search">
+                    <span aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="m20.7 19.3-4.1-4.1A7.5 7.5 0 1 0 15.2 16.6l4.1 4.1 1.4-1.4ZM5.5 11a5.5 5.5 0 1 1 11 0 5.5 5.5 0 0 1-11 0Z"/></svg>
+                    </span>
+                    <input type="search" placeholder="Search transactions, clients, invoices..." aria-label="Search">
+                </label>
+                <div class="topbar-actions">
+                    <button class="date-select" type="button">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h2v2h6V2h2v2h3v18H4V4h3V2Zm11 8H6v10h12V10Z"/></svg>
+                        Last 30 days
+                    </button>
+                    <button class="icon-button" type="button" aria-label="Notifications">
+                        <span class="notification-dot"></span>
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7v3.2L3 15v1h18v-1l-2-2.8V9a7 7 0 0 0-7-7Zm-2 16a2 2 0 0 0 4 0h-4Z"/></svg>
+                    </button>
+                    <button class="profile-button" type="button" aria-expanded="false">
+                        <span class="avatar">AK</span>
+                        <span class="profile-copy">
+                            <strong>Ada King</strong>
+                            <small>Finance Lead</small>
+                        </span>
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5H7Z"/></svg>
+                    </button>
+                    <div class="profile-menu" aria-label="Profile menu">
+                        <a href="#">Account settings</a>
+                        <a href="#">Billing workspace</a>
+                        <a href="#">Sign out</a>
                     </div>
-                    <button class="alert-close">×</button>
                 </div>
-                
-                <div class="stats-grid">
-                    <div class="stat-card budget">
-                        <div class="stat-label">Monthly Budget</div>
-                        <div class="stat-value">$25,430</div>
-                        <div class="stat-change negative">↑ 12% over budget</div>
+            </header>
+
+            <main class="dashboard">
+                <section class="hero-section" id="overview">
+                    <div>
+                        <span class="eyebrow">Finance dashboard</span>
+                        <h1>Executive overview</h1>
+                        <p>Track budget health, revenue momentum, collections risk, and product performance from one operational command center.</p>
                     </div>
-                    
-                    <div class="stat-card sales">
-                        <div class="stat-label">Total Sales</div>
-                        <div class="stat-value">$48,250</div>
-                        <div class="stat-change positive">↑ 8% vs last month</div>
-                    </div>
-                    
-                    <div class="stat-card invoices">
-                        <div class="stat-label">Outstanding Invoices</div>
-                        <div class="stat-value">$12,340</div>
-                        <div class="stat-change negative">5 overdue</div>
-                    </div>
-                    
-                    <div class="stat-card cash">
-                        <div class="stat-label">Cash Flow</div>
-                        <div class="stat-value">$15,890</div>
-                        <div class="stat-change positive">↑ 22% this quarter</div>
-                    </div>
-                </div>
-                
-                 <div class="budget-section">
-                    <div class="table-card">
-                        <div class="chart-title">📅 12-Month Budget Overview (2024)</div>
-                        <div class="budget-table">
-                            <table class="table">
+                    <button class="primary-button" type="button">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 4h2v8h4l-5 5-5-5h4V4ZM5 19h14v2H5v-2Z"/></svg>
+                        Export report
+                    </button>
+                </section>
+
+                <section class="kpi-grid" aria-label="Key performance indicators">
+                    <article class="kpi-card">
+                        <div class="kpi-topline">
+                            <span class="metric-icon blue"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4V5Zm3 4h6V7H7v2Zm0 4h10v-2H7v2Zm0 4h7v-2H7v2Z"/></svg></span>
+                            <span class="trend down">+12.0%</span>
+                        </div>
+                        <p>Monthly Budget</p>
+                        <strong>$25,430</strong>
+                        <div class="sparkline-frame"><canvas id="budgetSpark" aria-label="Monthly budget sparkline"></canvas></div>
+                        <small>$3,055 over previous month</small>
+                    </article>
+                    <article class="kpi-card">
+                        <div class="kpi-topline">
+                            <span class="metric-icon green"><svg viewBox="0 0 24 24"><path d="M4 18h16v2H4v-2Zm1-2 5-5 4 4 6-8 1.6 1.2-7.4 9.8-4.1-4.1L6.4 17.4 5 16Z"/></svg></span>
+                            <span class="trend up">+8.4%</span>
+                        </div>
+                        <p>Revenue</p>
+                        <strong>$48,250</strong>
+                        <div class="sparkline-frame"><canvas id="revenueSpark" aria-label="Revenue sparkline"></canvas></div>
+                        <small>$3,760 above previous month</small>
+                    </article>
+                    <article class="kpi-card">
+                        <div class="kpi-topline">
+                            <span class="metric-icon amber"><svg viewBox="0 0 24 24"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2V2Zm4 6h4V6h-4v2Zm0 4h6v-2h-6v2Zm0 4h5v-2h-5v2Z"/></svg></span>
+                            <span class="trend warn">5 overdue</span>
+                        </div>
+                        <p>Outstanding Invoices</p>
+                        <strong>$12,340</strong>
+                        <div class="sparkline-frame"><canvas id="invoiceSpark" aria-label="Outstanding invoices sparkline"></canvas></div>
+                        <small>Down $1,120 from previous month</small>
+                    </article>
+                    <article class="kpi-card">
+                        <div class="kpi-topline">
+                            <span class="metric-icon violet"><svg viewBox="0 0 24 24"><path d="M12 2 4 6v12l8 4 8-4V6l-8-4Zm0 2.2L17 7l-5 2.8L7 7l5-2.8ZM6 8.7l5 2.8v7.8l-5-2.5V8.7Zm12 8.1-5 2.5v-7.8l5-2.8v8.1Z"/></svg></span>
+                            <span class="trend up">+22.0%</span>
+                        </div>
+                        <p>Cash Flow</p>
+                        <strong>$15,890</strong>
+                        <div class="sparkline-frame"><canvas id="cashSpark" aria-label="Cash flow sparkline"></canvas></div>
+                        <small>$2,860 above previous month</small>
+                    </article>
+                </section>
+
+                <section class="analytics-grid" id="analytics">
+                    <article class="panel chart-panel large">
+                        <div class="panel-header">
+                            <div>
+                                <span class="eyebrow">Revenue</span>
+                                <h2>Revenue trend</h2>
+                            </div>
+                            <span class="chip success">Forecast +9.2%</span>
+                        </div>
+                        <div class="chart-frame"><canvas id="revenueChart"></canvas></div>
+                    </article>
+                    <article class="panel chart-panel">
+                        <div class="panel-header">
+                            <div>
+                                <span class="eyebrow">Spending</span>
+                                <h2>Budget vs actual</h2>
+                            </div>
+                        </div>
+                        <div class="chart-frame"><canvas id="budgetChart"></canvas></div>
+                    </article>
+                    <article class="panel chart-panel">
+                        <div class="panel-header">
+                            <div>
+                                <span class="eyebrow">Liquidity</span>
+                                <h2>Cash flow</h2>
+                            </div>
+                        </div>
+                        <div class="chart-frame"><canvas id="cashFlowChart"></canvas></div>
+                    </article>
+                </section>
+
+                <section class="content-grid">
+                    <article class="panel table-panel" id="budgets">
+                        <div class="panel-header">
+                            <div>
+                                <span class="eyebrow">Planning</span>
+                                <h2>Budget overview</h2>
+                            </div>
+                            <button class="secondary-button" type="button">View all</button>
+                        </div>
+                        <div class="table-scroll">
+                            <table class="data-table" id="budgetTable">
                                 <thead>
                                     <tr>
-                                        <th>Month</th>
-                                        <th>Planned Budget</th>
-                                        <th>Actual Spending</th>
-                                        <th>Variance</th>
-                                        <th>Status</th>
-                                        
+                                        <th><button data-sort="month">Month</button></th>
+                                        <th><button data-sort="planned">Planned</button></th>
+                                        <th><button data-sort="actual">Actual</button></th>
+                                        <th><button data-sort="variance">Variance</button></th>
+                                        <th><button data-sort="status">Status</button></th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><strong>January</strong></td>
-                                        <td class="budget-value">$22,500</td>
-                                        <td class="budget-value">$21,850</td>
-                                        <td class="budget-under">-$650</td>
-                                        <td><span class="status paid">Under Budget</span></td>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <td><strong>February</strong></td>
-                                        <td class="budget-value">$23,000</td>
-                                        <td class="budget-value">$24,200</td>
-                                        <td class="budget-over">+$1,200</td>
-                                        <td><span class="status overdue">Over Budget</span></td>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <td><strong>March</strong></td>
-                                        <td class="budget-value">$24,500</td>
-                                        <td class="budget-value">$24,450</td>
-                                        <td class="budget-under">-$50</td>
-                                        <td><span class="status paid">On Track</span></td>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <td><strong>April</strong></td>
-                                        <td class="budget-value">$23,800</td>
-                                        <td class="budget-value">$22,900</td>
-                                        <td class="budget-under">-$900</td>
-                                        <td><span class="status paid">Under Budget</span></td>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <td><strong>May</strong></td>
-                                        <td class="budget-value">$25,200</td>
-                                        <td class="budget-value">$26,100</td>
-                                        <td class="budget-over">+$900</td>
-                                        <td><span class="status overdue">Over Budget</span></td>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <td><strong>June</strong></td>
-                                        <td class="budget-value">$26,000</td>
-                                        <td class="budget-value">$25,800</td>
-                                        <td class="budget-under">-$200</td>
-                                        <td><span class="status paid">On Track</span></td>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <td><strong>July</strong></td>
-                                        <td class="budget-value">$24,800</td>
-                                        <td class="budget-value">$23,950</td>
-                                        <td class="budget-under">-$850</td>
-                                        <td><span class="status paid">Under Budget</span></td>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <td><strong>August</strong></td>
-                                        <td class="budget-value">$25,500</td>
-                                        <td class="budget-value">$26,750</td>
-                                        <td class="budget-over">+$1,250</td>
-                                        <td><span class="status overdue">Over Budget</span></td>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <td><strong>September</strong></td>
-                                        <td class="budget-value">$23,900</td>
-                                        <td class="budget-value">$23,850</td>
-                                        <td class="budget-under">-$50</td>
-                                        <td><span class="status paid">On Track</span></td>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <td><strong>October</strong></td>
-                                        <td class="budget-value">$26,200</td>
-                                        <td class="budget-value">$25,600</td>
-                                        <td class="budget-under">-$600</td>
-                                        <td><span class="status paid">Under Budget</span></td>
-                                       
-                                    </tr>
-                                    <tr>
-                                        <td><strong>November</strong></td>
-                                        <td class="budget-value">$27,000</td>
-                                        <td class="budget-value">$28,200</td>
-                                        <td class="budget-over">+$1,200</td>
-                                        <td><span class="status overdue">Over Budget</span></td>
-                                       
-                                    </tr>
-                                    <tr style="background-color: #fff3cd;">
-                                        <td><strong>December</strong></td>
-                                        <td class="budget-value">$25,430</td>
-                                        <td class="budget-value">$28,485</td>
-                                        <td class="budget-over">+$3,055</td>
-                                        <td><span class="status overdue">Over Budget</span></td>
-                                        
-                                    </tr>
-                                </tbody>
+                                <tbody></tbody>
                             </table>
                         </div>
-                    </div>
-                </div>
-                
-              
-                <div class="bottom-grid">
-                    <div class="table-card">
-                        <div class="chart-title">Recent Invoices</div>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Invoice #</th>
-                                    <th>Client</th>
-                                    <th>Amount</th>
-                                    <th>Due Date</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>INV-001</td>
-                                    <td>Acme Corp</td>
-                                    <td>$2,500</td>
-                                    <td>Dec 15</td>
-                                    <td><span class="status paid">Paid</span></td>
-                                </tr>
-                                <tr>
-                                    <td>INV-002</td>
-                                    <td>Tech Solutions</td>
-                                    <td>$1,800</td>
-                                    <td>Dec 20</td>
-                                    <td><span class="status pending">Pending</span></td>
-                                </tr>
-                                <tr>
-                                    <td>INV-003</td>
-                                    <td>StartupXYZ</td>
-                                    <td>$3,200</td>
-                                    <td>Dec 10</td>
-                                    <td><span class="status overdue">Overdue</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    
-                    <div class="table-card">
-                        <div class="chart-title">Top Selling Products</div>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Product</th>
-                                    <th>Units Sold</th>
-                                    <th>Revenue</th>
-                                    <th>Trend</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Pro Package</td>
-                                    <td>45</td>
-                                    <td>$15,750</td>
-                                    <td style="color: #4CAF50;">↑ 12%</td>
-                                </tr>
-                                <tr>
-                                    <td>Basic Service</td>
-                                    <td>38</td>
-                                    <td>$9,120</td>
-                                    <td style="color: #4CAF50;">↑ 5%</td>
-                                </tr>
-                                <tr>
-                                    <td>Consultation</td>
-                                    <td>22</td>
-                                    <td>$6,600</td>
-                                    <td style="color: #f44336;">↓ 8%</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+                    </article>
 
-           
+                    <aside class="side-stack">
+                        <article class="panel" id="alerts">
+                            <div class="panel-header">
+                                <div>
+                                    <span class="eyebrow">Updates</span>
+                                    <h2>Activity feed</h2>
+                                </div>
+                            </div>
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <span class="activity-dot success"></span>
+                                    <div>
+                                        <strong>Acme Corp paid INV-1042</strong>
+                                        <p>$4,800 settled via bank transfer</p>
+                                    </div>
+                                    <time>12m</time>
+                                </div>
+                                <div class="activity-item">
+                                    <span class="activity-dot warning"></span>
+                                    <div>
+                                        <strong>Marketing budget alert</strong>
+                                        <p>Spend is tracking 12% above plan</p>
+                                    </div>
+                                    <time>48m</time>
+                                </div>
+                                <div class="activity-item">
+                                    <span class="activity-dot info"></span>
+                                    <div>
+                                        <strong id="invoices">Invoice INV-1045 updated</strong>
+                                        <p>Due date moved to Jun 21</p>
+                                    </div>
+                                    <time>2h</time>
+                                </div>
+                                <div class="activity-item">
+                                    <span class="activity-dot error"></span>
+                                    <div>
+                                        <strong>Payment retry failed</strong>
+                                        <p>StartupXYZ card mandate expired</p>
+                                    </div>
+                                    <time>5h</time>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="panel" id="products">
+                            <div class="panel-header">
+                                <div>
+                                    <span class="eyebrow">Revenue mix</span>
+                                    <h2>Top products</h2>
+                                </div>
+                            </div>
+                            <div class="product-list">
+                                <div class="product-item">
+                                    <div>
+                                        <strong>Pro Package</strong>
+                                        <span>$15,750 revenue</span>
+                                    </div>
+                                    <span class="trend up">+12%</span>
+                                    <div class="progress"><span style="width: 84%"></span></div>
+                                </div>
+                                <div class="product-item">
+                                    <div>
+                                        <strong>Basic Service</strong>
+                                        <span>$9,120 revenue</span>
+                                    </div>
+                                    <span class="trend up">+5%</span>
+                                    <div class="progress"><span style="width: 62%"></span></div>
+                                </div>
+                                <div class="product-item">
+                                    <div>
+                                        <strong>Consultation</strong>
+                                        <span>$6,600 revenue</span>
+                                    </div>
+                                    <span class="trend down">-8%</span>
+                                    <div class="progress"><span style="width: 44%"></span></div>
+                                </div>
+                            </div>
+                        </article>
+                    </aside>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
